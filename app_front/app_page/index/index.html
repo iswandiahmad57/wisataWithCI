@@ -1,0 +1,149 @@
+                <!-- Crum -->
+                <div class="crum-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                <a href="">Home</a>
+                                <span class="crum">Grid Page</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Crum-->
+
+                <!-- Grid page -->
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="span3" id="sidebar">
+
+                                <div id="widget_accordion">
+                                    <h3> Select Wilayah <a href="#"></a></h3>
+                                    <div class="widget">
+
+                                       
+                                                    <ul ng-repeat="w in wilayah">
+
+                                                        <li>  
+                                                            <div class="checkbox">
+                                                                <label><input type="checkbox" ng-model="ids[$index]" ng-change="update(ids[$index])" > {{w}}</label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                        
+                       
+                                    </div>
+                                    <h3> Select category <a href="#"></a></h3>
+                                    <div class="widget">
+                                        <div class="scrollbar1">
+                                            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                                            <div class="viewport">
+                                                <div class="overview">
+                                                    <ul ng-repeat="w in category">
+
+                                                        <li>  
+                                                            <div class="checkbox">
+                                                                <label><input type="checkbox" ng-model="ids1[$index]" ng-change="update(ids[$index])" > {{w}}</label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <h3> By Price <a href="#"></a></h3>
+                                    <div class="widget">
+                                        <form>
+                                            <select ng-model="price" ng-change="changedValue(price)" >
+                                                <option value="10000">Rp 10000 - Rp 50000</option>
+                                                <option value="50000">Rp 50000 - Rp 250000</option>
+                                            </select>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="span9 right_content">
+                                <div class="row">
+                                    <div class="portfolio-nav span9 clearfix">
+                                        <strong>Sort By:</strong>
+                                        <ul class="option-set clearfix" data-option-key="filter">
+                                            <li><a href="#filter" data-option-value="*"  ng-click="sortBy(null)" class="selected">Default</a></li>
+                    
+                                            <li><a href="#filter" data-option-value=".price" ng-click="sortBy('wisatatiketPrice')" >Price</a></li>
+                                         
+                                            <li><a href="#filter" data-option-value=".rate" >Rating</a></li>
+                                        </ul>
+                                        
+    
+                                        <div class="clearfix"></div>
+
+                                        <span class="border"></span>
+                                    </div>
+                                    <div class="span4 srch">
+                                        <form>
+                                            <input type="submit" value="">
+                                            <input type="text" name="search" placeholder="Search" ng-model="search">
+                                        </form>
+                                        <div class="clearfix"></div>
+
+                                        <span class="border"></span>
+                                    </div>
+                                </div>
+
+                                <div ng-hide="wisataLoaded" class="row preloader" id="project-container">
+                                    <!-- image here via CSS -->
+                                </div>
+
+                                <div ng-show="wisataLoaded" class="row" id="project-container">
+
+                                    <div class=" span3 offer element branding" ng-repeat="w in wisata| orderBy:propertyName:reverse | filter:search">
+                                        <figure>
+                                            <img ng-show="w.wisataCover == ''" ng-src="uploads/World_Russia_Kazan_Cathedral_034617_.jpg"  alt="Offer Image">
+                                            <img ng-show="w.wisataCover != ''" ng-src="uploads/{{w.wisataCover}}"  alt="Offer Image">
+
+                                            <div class="overlay">
+                                                <a href="#" class="like"></a>
+                                            </div>
+                                        </figure>
+                                        <article>
+                                            <h3>{{w.wisataName | limitTo:15}}</h3>
+                                            <h4>{{w.wisataWilayah}}</h4>
+                                            <p><a href="#" class="active"></a>
+                                                <a href="#" class="active"></a>
+                                                <a href="#" class="active"></a>
+                                                <a href="#"></a>
+                                                <a href="#"></a>
+                                            </p>
+                                            <span></span>
+                                        </article>
+                                        <div class="price">
+                                            <h3>{{w.wisatatiketPrice}}K</h3>
+                                            <a href="#!/wisata/{{w.wisataID}}/view"></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <span class="border"></span>
+                            
+                                <div class="pagination clearfix">
+                                    <p>Showing<a href="#"> Page {{startPage+1}} </a>10 row <a href="#">of {{total}} entries</a></p>
+                                    <div class="errows">
+                                        <a class="left_errow" ng-click="pagination('min')"></a>
+                                        <a class="right_errow" ng-click="pagination('next')"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid page -->
+
+<script src="bower_components/front/js/custom.js"></script>  

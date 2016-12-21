@@ -1,0 +1,254 @@
+                <!-- Crum -->
+                <div class="crum-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                <a href="">Home</a>
+                                <span class="crum">Detail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Crum-->
+
+
+                <!-- Grid page -->
+                <div class="content trave_detail">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="span3" id="sidebar">
+                                <div class="widget checking_form clearfix">
+                                    <form action="#" method="post" class="clearfixc">
+
+                                        <div class="check_detail">
+                                            <h4>{{wisata.wisataName}}</h4>
+                                            <h5>{{wisata.wisataWilayah}}</h5>
+                                            <div class="stars">
+                                                <a href="#" class="active"></a>
+                                                <a href="#" class="active"></a>
+                                                <a href="#" class="active"></a>
+                                                <a href="#"></a>
+                                                <a href="#"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="location clearfix">
+                                            <div class="pull-left clearfix">
+                                                <div class="date clearfix">
+                                                    <div class="Depart-Date">
+                                                        <label>Tanggal</label>
+                                                        <input type="text" name="Location" value="30.01.2013" id="datepicker">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="check_detail clearfix" >
+                                                <p class="two">Transport<span> Free</span></p>
+                                                
+                                            </div>
+
+                                            <div class="pull-right">
+                                                <div class="persons clearfix">
+                                                    <div class="ad">
+                                                        <label>Adults</label>
+                                                        <input type="text" name="Location" value="1" id="spinner" ng-model="adults">
+                                                    </div>
+                                                    <div class="ad">
+                                                        <label>Children</label>
+                                                        <input type="text" name="Location" value="1" id="spinner-two" ng-model="child">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="clearfix">Tiket Adult <span>{{wisata.wisatatiketPrice}}  K</span></p>
+                                        <p class="clearfix">Tiket Child <span>{{wisata.wisatatiketChildrenPrice }}  K</span></p>
+
+                                        <p class="clearfix">Total <span> {{}}</span></p>
+                                        <div class="search">
+                                            <input type="submit" name="search" value="BELI SEKARANG" >
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="widget_accordion">
+
+                                    <h3> need help booking <a href="#"></a></h3>
+                                    <div class="widget">
+                                        <p>Pri ut minim fierent voluptatum, ea pro erat postea option</p>
+                                        <p class="call">1-669-559-4378</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="span9 right_content">
+                                <div class="carousel_wrap">
+                                    <div id="carousel-wrapper">
+                                        <div id="carousel_two" class="cool-carousel">
+                                            <span id="image1"><img src="uploads/{{wisata.wisataCover}}" alt=""/></span>
+                                            <span id="image2"><img src="http://placehold.it/840x311" alt="" /></span>
+                                            <span id="image3"><img src="http://placehold.it/840x311" alt="" /></span>
+                                            <span id="image4"><img src="http://placehold.it/840x311" alt=""/></span>
+                                            <span id="image5"><img src="http://placehold.it/840x311" alt=""/></span>
+                                            <span id="image6"><img src="http://placehold.it/840x311" alt="" /></span>
+                                            <span id="image7"><img src="http://placehold.it/840x311" alt="" /></span>
+                                            <span id="image8"><img src="http://placehold.it/840x311" alt=""/></span>
+                                        </div>
+                                        <a href="#" class="prev"></a><a href="#" class="next"></a>
+                                    </div>
+
+                                    <div class="carousal-bottom">
+                                        <div id="thumbs-wrapper">
+                                            <div id="thumbs">
+                                                <a href="#image1" class="selected" ng-repeat="i in wisataGambar"><img ng-src="uploads/{{i.wisataimageName}}"  alt="" /></a>
+<!-- <a href="#image1" class="selected" ng-repeat="i in wisataGambar"><img ng-src="uploads/{{i.wisataimageName}}"  alt="" /></a> -->
+            <!--                                     <a href="#image2"><img src="http://placehold.it/97x74" alt="" /></a>
+                                                <a href="#image3"><img src="http://placehold.it/97x74" alt=""/></a>
+                                                <a href="#image4"><img src="http://placehold.it/97x74" alt=""/></a> -->
+                                            </div>
+                                            <a id="prev" href="#"></a>
+                                            <a id="next" href="#"></a>
+                                        </div>
+                                    </div>
+
+                                    <span class="border"></span>
+                                </div>
+
+                                <div id="tabs_two">
+                                    <ul class="clearfix">
+                                        <li><a href="#tabs-1" class="one">Summary</a></li>
+                                        <li><a href="#tabs-3" class="three">location</a></li>
+                                        <li><a href="#tabs-4" class="four">Reviews</a></li>
+                                    </ul>
+                                    <div id="tabs-1" class="tab clearfix" >
+                                        <div class="detail clearfix">
+
+                                            <p>
+                                            {{wisata.wisataContent | removeHTMLTags}}
+                                            </p>
+<!--                                             <h2>Room Amenities</h2>
+                                            <ul>
+                                                <li>Restaurants</li>
+                                                <li>Complimenttary Wi-Fi</li>
+                                                <li>Internet</li>
+                                                <li>Parking</li>
+                                            </ul>
+
+                                            <ul>
+                                                <li>Restaurants</li>
+                                                <li>Complimenttary Wi-Fi</li>
+                                                <li>Internet</li>
+                                                <li>Parking</li>
+                                            </ul>
+
+                                            <ul>
+                                                <li>Restaurants</li>
+                                                <li>Complimenttary Wi-Fi</li>
+                                                <li>Internet</li>
+                                                <li>Parking</li>
+                                            </ul>
+
+                                            <ul>
+                                                <li>Restaurants</li>
+                                                <li>Complimenttary Wi-Fi</li>
+                                                <li>Internet</li>
+                                                <li>Parking</li>
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                    <div id="tabs-3" class="tab clearfix" >
+                                        <div class="detail">
+                                            <div class="map">
+                                                <iframe width="100%" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Envato+Pty+Ltd,+13%2F2+Elizabeth+Street,+Melbourne+VIC,+Australia&amp;aq=0&amp;oq=envato&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=Envato+Pty+Ltd,+13%2F2+Elizabeth+Street,&amp;hnear=Melbourne+Victoria,+Australia&amp;t=p&amp;ll=-37.817209,144.961681&amp;spn=0.010849,0.04107&amp;z=15&amp;output=embed"></iframe>
+                                            </div>
+
+                                            <h2>Hotel Location</h2>
+                                            <p>Feugiat consequat augue pulvinar fusce quis dui diam leo dictumst, fringilla quisque nulla nec blandit lectus aenean lobortis ultrices, fames dolor accumsan ultrices eleifend convallis himenaeos etiam.</p>
+                                        </div>
+                                    </div>
+                                    <div id="tabs-4" class="tab clearfix" >
+                                        <div class="detail">
+                                            <div class="row">
+
+                                                <div class="span4 our_rating">
+                                                    <h2>Your Rating</h2>
+<!--                                                     <ul>
+                                                        <li class="first">Rating</li>
+                                                        <li><a href="#" class="blue_star"></a></li>
+                                                        <li><a href="#" class="blue_star"></a></li>
+                                                        <li><a href="#" class="blue_star"></a></li>
+                                                        <li><a href="#" class="blue_star"></a></li>
+                                                        <li><a href="#" class="star"></a></li>
+                                                    </ul> -->
+                                                    <ul>
+                                                   <input-stars max="5" on-star-click="send(wisataControllerView.rating)" ng-attr-readonly="{{ enableReadonly || false }}" ng-model="wisataControllerView.rating"></input-stars>
+
+
+                                                   </ul>
+                                                   
+                                                    <!-- <p><span>4.5/5</span> Rating based on 5 verified Reviews</p> -->
+                                                </div>
+
+                                                <div class="span4 contact_form">
+                                                    <h2>Comment</h2>
+                                                    <form id="form1" method="post" >
+                        
+                                                        <span style="color:red">{{errorName}}</span>
+                                                        <input type="text" value="Your Email:" placeholder="Email" 
+                                                        ng-model="comment.commentEmail">
+                                                        <span style="color:red">{{errorEmail}}</span>
+                                                        <textarea value="Comment:" ng-model="comment.commentContent"></textarea>
+                                                        <input type="submit" value="Comment" ng-click="saveComment()">
+                                                    </form>
+                                                </div>
+                                                <div class="span8">
+                                                    <div class="hotdeal">
+                                                        <div class="deal-header">
+                                                            <h3>Comments</h3>
+                                                        </div>
+
+                                                        <div id="vcarousel">
+                                                            <ul>
+                                                                <li ng-repeat="c in comments">
+                                                                    <figure class="pull-left"><img ng-src="bower_components/fronot/images/hotdeal-pic.png" alt="Pic"></figure>
+                                                                    <article class=" clearfix">
+                                                                        <div class="hot pull-left">
+                                                                            <h5>{{c.commentEmail}}</h5>
+                                                                            <span>{{c.commentDate}}</span>
+                                                                            <p>{{c.commentContent}} </p>
+                                                                        </div>
+                                                                    </article>
+                                                                </li>
+<!--                                                                 <li>
+                                                                    <figure class="pull-left"><img ng-src="bower_components/fronot/images/hotdeal-pic.png" alt="Pic"></figure>
+                                                                    <article class=" clearfix">
+                                                                        <div class="hot pull-left">
+                                                                            <h5>{{c.commentContent}}</h5>
+                                                                            <span>12 minutes ago.</span>
+                                                                            <p>Lorem ipsum venenatis donec sociosqu porta </p>
+                                                                        </div>
+                                                                    </article>
+                                                                </li> -->
+                                                            </ul>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <a href="" class="d-down"></a>
+                                                            <a href="" class="d-up"></a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid page -->
+<script src="bower_components/front/js/custom.js"></script>  

@@ -1,0 +1,84 @@
+
+
+         
+
+              <div class="col-md-12 col-sm-12 col-xs-12" >
+
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Wisata Time Ranges ({{wisataName}}) <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li>          <button type="button" ng-click="add()" class="btn btn-success btn-md" data-toggle="modal" data-target="#modal_form"><i class="fa fa-plus"></i> Tambah Data</button></a>
+                      </li>
+
+                      <li>        <button type="button" class="btn btn-danger btn-md" ng-click="reloadData()"><i class="fa fa-refresh"></i> Reload Table</button></a>
+                      </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                        <div >
+                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%" datatable="" dt-options="dtOptions" dt-columns="dtColumns" dt-instance="dtInstance"></table>
+                          
+                        </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+<!-- Bootstrap modal -->
+<div class="modal fade" id="modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Product Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="id"/> 
+                    <div class="form-body">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Destination</label>
+                            <div class="col-md-9">
+                                <select name="destinationID" ng-model="wisatatimerange.destinationID" class="form-control">
+                                    <option ng-repeat="wis in destination" value="{{wis.wisataID}}">{{wis.wisataName}}</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Duration</label>
+                            <div class="col-md-9">
+                                <input name="duration" ng-model="wisatatimerange.duration" placeholder="Product Name" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+<!--                         <div class="form-group">
+                            <label class="control-label col-md-3">Date of Birth</label>
+                            <div class="col-md-9">
+                                <input name="dob" placeholder="yyyy-mm-dd" class="form-control " id="birthday" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div> -->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button  class="btn btn-primary" ladda="submitting" data-style="expand-left" ng-click="save()"  type="submit">
+                  <span ng-show="submitting">Saving</span>
+                  <span ng-show="!submitting">Save</span>
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->

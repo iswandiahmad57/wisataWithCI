@@ -1,0 +1,74 @@
+                        <div class="col-md-12 col-sm-12 col-xs-12" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
+
+                <div class="x_panel">
+                
+                  <div class="x_title">
+                    <h2>{{title}}<small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li>  <button   class="btn btn-success btn-md" ladda="submitting" data-style="expand-left" ng-click="save()">
+
+                            <span ng-show="submitting">Saving</span>
+                             <span ng-show="!submitting" style="color:white"><i class="fa fa-save"></i> Save</span>
+                             </button>
+                      </li>
+
+                      <li>        <button type="button" class="btn btn-danger btn-md" ng-click="reloadData()"><i class="fa fa-arrow-left"></i> Back To posting</button></a>
+                      </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div><div class="x_content" ><form action="#" id="form" class="form-vertical" method="POST">
+                            <div class="form-body"><div class="form-group">
+                                                <label class="control-label col-md-3">userNickname</label>
+                                                <div class="col-md-9">
+                                                    <input name="userNickname" ng-model="user.userNickname"  class="form-control" type="text">
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div><div class="form-group">
+                                                <label class="control-label col-md-3">userPhoto</label>
+                                                <div class="col-md-9">
+                                                
+                                                 
+                                                        <div ng-show="uploader.isHTML5">
+                                                            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                                                            <div class="well my-drop-zone" nv-file-over="" uploader="uploader" multiple>
+                                                                + Tambahkan Gambar Disini , Drag & Drop , gambar yang diupload bisa lebih dari satu
+                                                            </div>
+                                  
+                                                            
+                                                        </div>
+
+
+                                                        <div class="col-md-55" ng-repeat="item in uploader.queue">
+                                                            <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                                                        </div>
+                                                        <div ng-repeat="i in images">
+                                                            <img ng-src="uploads/{{i._file}}" style="height:100px; width:100px">
+                                                        </div>
+                                                   
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div><div class="form-group">
+                                                    <label class="control-label col-md-3">userType</label>
+                                                    <div class="col-md-9">
+                                                        <select name="userType" ng-model="user.userType" class="form-control">
+                                                            <option ng-repeat="a in userType " value="{{a}}">{{a}}</option>
+                                                        </select>
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                  </div><div class="form-group">
+                                                <label class="control-label col-md-3">username</label>
+                                                <div class="col-md-9">
+                                                    <input name="username" ng-model="user.username"  class="form-control" type="text">
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div><div class="form-group">
+                                                <label class="control-label col-md-3">password</label>
+                                                <div class="col-md-9">
+                                                    <input name="password" ng-model="user.password"  class="form-control" type="text">
+                                                    <span class="help-block"></span>
+                                                </div>
+                                            </div></div>
+                        </form>     </div>
+                </div>
+              </div>                        

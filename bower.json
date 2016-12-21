@@ -1,0 +1,29 @@
+{
+  "name": "mrguides",
+  "description": "this component",
+  "main": "mrguides",
+  "keywords": [
+    "mrguides"
+  ],
+  "authors": [
+    "mrguides"
+  ],
+  "license": "y",
+  "homepage": "mrguides",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "components-font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "angular": "^1.5.8"
+  }
+}

@@ -1,0 +1,157 @@
+
+              <div class="col-md-12 col-sm-12 col-xs-12" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
+
+                <div class="x_panel">
+                
+                  <div class="x_title">
+                    <h2>{{title}}<small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li>  <button   class="btn btn-success btn-md" ladda="submitting" data-style="expand-left" ng-click="save()">
+
+                            <span ng-show="submitting">Saving</span>
+                             <span ng-show="!submitting" style="color:white"><i class="fa fa-save"></i> Save</span>
+                             </button>
+                      </li>
+
+                      <li>        <button type="button" class="btn btn-danger btn-md" ng-click="reloadData()"><i class="fa fa-arrow-left"></i> Back To posting</button></a>
+                      </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" >
+
+                                    <div class="col-md-12">
+
+                                        <div ng-show="uploader.isHTML5">
+                                            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                                            <div class="well my-drop-zone" nv-file-over="" uploader="uploader" multiple>
+                                                + Tambahkan Gambar Disini , Drag & Drop , gambar yang diupload bisa lebih dari satu
+                                            </div>
+                  
+                                            
+                                        </div>
+                                    </div>
+                    <div class="col-md-12">
+
+                          <div class="col-md-55" ng-repeat="items in wisataGambar">
+                            <div class="thumbnail">
+                              <div class="image view view-first">
+                           
+                                <img ng-src="uploads/{{items.wisataimageName}}" alt="" style="width: 100%; display: block;"/>
+                                <div class="mask">
+                                  <p>image Content</p>
+                                  <div class="tools tools-bottom">
+                                   
+                                        <button type="button" class="btn btn-danger btn-xs" ng-click="remove(items.wisataimageID)">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-55" ng-repeat="item in uploader.queue">
+                            <div class="thumbnail">
+                              <div class="image view view-first">
+                           
+                                <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                                <div class="mask">
+                                  <p>{{ item.file.name }}</p>
+                                  <div class="tools tools-bottom">
+                                   
+                                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="caption">
+                                        <div class="progress" style="margin-bottom: 0;">
+                                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                                            <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()">
+                                                                <span class="glyphicon glyphicon-check"></span> Upload
+                                                            </button>
+          
+                                                            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                                                <span class="glyphicon glyphicon-trash"></span> Del
+                                                            </button>
+   
+                              </div>
+                            </div>
+                          </div>
+
+
+                    </div>
+                    <div class="col-md-12">
+                            <input type="hidden" value="" name="id"/> 
+                        <form action="#" id="form" class="form-vertical" method="POST"ss>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Name *</label>
+                                        <input name="timelineTitle" ng-model="wisata.wisataName" placeholder="Type Your Title Here...." class="form-control" type="text">
+                                        <span class="help-block"></span>
+
+                                    </div>
+                                     <div class="col-md-6">
+
+                                        <label>Wilayah *</label>
+                                        <select class="select2_group form-control" ng-model="wisata.wisataWilayah">
+                                          <option ng-repeat="wil in wilayah" value="{{wil.wilayahName}}">{{wil.wilayahName}}</option>
+                                        </select>
+                                        <input type="hidden" name="wilayahID"/>
+                                        <span class="help-block"></span>
+                                    </div>    
+                                    <div class="col-md-3">
+                                        <label>Latitude *</label>
+                                        <input name="wisataLat" ng-model="wisata.wisataLat" placeholder="Latitude" class="form-control" type="text">
+                                        <span class="help-block"></span>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Longitude *</label>
+                                        <input name="wisataLng" ng-model="wisata.wisataLng" placeholder="Longitude" class="form-control" type="text">
+                                        <span class="help-block"></span>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <label>Category *</label>
+                                        <select class="select2_group form-control" ng-model="wisata.wisataCategory">
+                                          <option ng-repeat="wil in category" value="{{wil}}">{{wil}}</option>
+                                        </select>
+                                        <input type="hidden" name="wilayahID"/>
+                                        <span class="help-block"></span>
+                                    </div>
+
+
+                                
+                                </div>
+                                <br/>
+
+                                <div class="form-group">
+                    
+                                    <div class="col-md-12">
+                                    <label>Content *</label>
+                                        <text-angular name="wisataContent" ng-model="wisata.wisataContent">
+                                            <p>type anything here ....</p>
+                                        </text-angular>
+                                        <span class="help-block"></span>
+                           
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                        
+
+                  </div>
+                </div>
+              </div>
+

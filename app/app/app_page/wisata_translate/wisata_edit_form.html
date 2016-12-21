@@ -1,0 +1,70 @@
+
+              <div class="col-md-12 col-sm-12 col-xs-12" >
+
+                <div class="x_panel">
+                
+                  <div class="x_title">
+                    <h2>{{title}}<small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li>  <button   class="btn btn-success btn-md" ladda="submitting" data-style="expand-left" ng-click="save()">
+
+                            <span ng-show="submitting">Saving</span>
+                             <span ng-show="!submitting" style="color:white"><i class="fa fa-save"></i> Edit</span>
+                             </button>
+                      </li>
+
+                      <li>        <button type="button" class="btn btn-danger btn-md" ng-click=""><i class="fa fa-arrow-left"></i> Back</button></a>
+                      </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" >
+                    
+                    <div class="col-md-12">
+                            <input type="hidden" value="" name="id"/> 
+                        <form action="#" id="form" class="form-vertical" method="POST"ss>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Name *</label>
+                                        <input name="wisataName" ng-model="wisata_translated.wisataName" placeholder="Type Your Title Here...." class="form-control" type="text">
+                                        <span class="help-block"></span>
+
+                                    </div>
+                                     <div class="col-md-6">
+
+                                        <label>Language *</label>
+                                        <select class="select2_group form-control" ng-model="wisata_translated.localizationID">
+                                          <option ng-repeat="wil in languages" value="{{wil.localizationID}}">{{wil.localizationName}}</option>
+                                        </select>
+                                        <input type="hidden" name="languageID"/>
+                                        <span class="help-block"></span>
+                                    </div>    
+                              
+
+
+                                
+                                </div>
+                                <br/>
+
+                                <div class="form-group">
+                    
+                                    <div class="col-md-12">
+                                    <label>Content *</label>
+                                        <text-angular name="wisataContent" ng-model="wisata_translated.wisataContent">
+                                            <p>type anything here ....</p>
+                                        </text-angular>
+                                        <span class="help-block"></span>
+                           
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                        
+
+                  </div>
+                </div>
+              </div>
+
